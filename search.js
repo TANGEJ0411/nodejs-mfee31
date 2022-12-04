@@ -1,7 +1,8 @@
 function search(array, target) {
     let halfLength = Math.trunc((array.length - 1) / 2);
     let lengthNumber = array.length - 1;
-    for (let i = 1; i < array.length; i++) {
+    let aryLog = Math.ceil(Math.log(array.length));
+    for (let i = 1; i < aryLog; i++) {
         let pow2 = (Math.pow(2, i));
         if (array[halfLength] === target) {
             return halfLength;
