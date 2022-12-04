@@ -6,7 +6,7 @@ function sum(n) {
 console.log(sum(3));
 console.log(sum(10));
 
-function sum1(n) {
+/* function sum1(n) {
     let total = 0;
     for (let i = 1; i <= n; i++) {
         total += i;
@@ -20,4 +20,4 @@ function sum2(n) {
 
 }
 console.log(sum2(3));
-console.log(sum2(10));
+console.log(sum2(10)); */
