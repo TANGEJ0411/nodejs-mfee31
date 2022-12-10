@@ -13,3 +13,17 @@ let myPromise = new Promise(function (resolve, reject) {
 })
 
 console.log(myPromise);
+
+
+let a={
+    a:1,
+    b:2,
+    c:{
+        d:3
+    }
+};
+let b ={a};
+//console.log(b);
+//b.a=5;
+console.log(b);
+console.log(a);

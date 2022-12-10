@@ -10,22 +10,44 @@ const fs= require('fs');
 //     }
 // });
 
-const readFilePromise = function () {
-    return new Promise((resolve, reject) => {
-        fs.readFile('test123.txt','utf-8',(err,data) => {
-            if(err){
-                //如果err有值，表示有錯誤發生
-                //這裡要處理錯誤
-                reject(`讀取檔案失敗${err}`);
-            }else{
-                resolve(`讀取檔案成功${data}`);
-            }
-        });
-    })
-}
+// const readFilePromise = function () {
+//     return new Promise((resolve, reject) => {
+//         fs.readFile('test1.txt','utf-8',(err,data) => {
+//             if(err){
+//                 //如果err有值，表示有錯誤發生
+//                 //這裡要處理錯誤
+//                 reject(err);
+//             }else{
+//                 resolve(data);
+//             }
+//         });
+//     })
+// }
+const readFilePromise=new Promise((resolve, reject) => {
+    fs.readFile('test1.txt','utf-8',(err,data) => {
+        if (err) {
+            //如果err有值，表示有錯誤發生
+            //這裡要處理錯誤
+            reject(err);
+        } else {
+            resolve(data);
+        }
+    });
+});
 
-readFilePromise().then((data)=>{
-    console.log(data);
+/* readFilePromise().then((data)=>{
+    console.log('then成功 : '+data);
 }).catch((err)=>{
-    console.log(err);
-})
+    console.log('catch失敗 : '+err);
+}) */
+
+//用IIFE寫async
+
+(async () => {
+    try{
+        let data = await readFilePromise;
+        console.log('await',data);
+    }catch(err){
+        console.log(err);
+    }
+})();

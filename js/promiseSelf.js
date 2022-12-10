@@ -1,4 +1,3 @@
-
 // Promise 是一個表示非同步運算的最終完成或失敗的物件。
 // 1. Promise 是一個物件 new Promise()
 //    new Promise(executor)
@@ -33,14 +32,15 @@ brushPromise
     .catch((err) => {
         console.error('發生錯誤', err);
     }); */
-doWorkPromise('刷牙', 3000).then((success) => {
-    console.log(success);
+doWorkPromise('刷牙', 3000)
+  .then((data) => {
+    console.log(data);
     return doWorkPromise('吃早餐', 5000)
-}).then((success) => {
-    console.log(success);
+}).then((data) => {
+    console.log(data);
     return doWorkPromise('寫作業', 3000)
-}).then((success) => {
-    console.log(success);
+}).then((data) => {
+    console.log(data);
 }).catch((err) => {
     console.error('錯誤', err);
 }).finally(() => {
