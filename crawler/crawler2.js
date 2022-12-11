@@ -1,6 +1,7 @@
 const axios=require('axios');
-const fs = require('fs');
-let readFilePromise = new Promise((resolve, reject) => {
+const { readFile } = require('node:fs/promises');
+const { resolve } = require('node:path');
+/* let readFilePromise = new Promise((resolve, reject) => {
     fs.readFile('stock.txt', 'utf-8', (err, data) => {
       if (err) {
         reject(err);
@@ -8,11 +9,11 @@ let readFilePromise = new Promise((resolve, reject) => {
         resolve(data);
       }
     });
-  });
+  }); */
 
 try{
     (async ()=>{
-        let data = await readFilePromise;
+        let data = await readFile('stock.txt', { encoding: 'utf8' });;
         let stockNo = data;
         let date = '20221111';
         let crawler = await axios.get(`http://54.71.133.152:3000/stocks`, {
