@@ -33,16 +33,16 @@ brushPromise
         console.error('發生錯誤', err);
     }); */
 doWorkPromise('刷牙', 3000)
-  .then((data) => {
-    console.log(data);
-    return doWorkPromise('吃早餐', 5000)
-}).then((data) => {
-    console.log(data);
-    return doWorkPromise('寫作業', 3000)
-}).then((data) => {
-    console.log(data);
-}).catch((err) => {
-    console.error('錯誤', err);
-}).finally(() => {
-    console.log(`出門去${now.toISOString()}`)
-});
+    .then((data) => {
+        console.log(data);
+        return doWorkPromise('吃早餐', 5000)
+    }).then((data) => {
+        console.log(data);
+        return doWorkPromise('寫作業', 3000)
+    }).then((data) => {
+        console.log(data);
+    }).catch((err) => {
+        console.error('錯誤', err);
+    }).finally(() => {
+        console.log(`出門去${now.toISOString()}`)
+    });

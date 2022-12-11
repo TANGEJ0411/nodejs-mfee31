@@ -23,7 +23,8 @@ console.log(concat(ary1, ary2));
 //push
 
 function push(ary, str) {
-    ary = [...ary, str]
+    ary.length += 1;
+    ary[ary.length - 1] = str;
     return ary;
 }
 console.log(push(ary1, 300));
@@ -31,15 +32,20 @@ console.log(push(ary1, 300));
 
 //pop
 console.log(ary1);
+// function pop(ary) {
+//     aryNum = ary.length - 1
+//     arySet = [];
+//     for (let i = 0; i < aryNum; i++) {
+//         arySet = [...arySet, ary[i]];
+//         //console.log(arySet);
+//     }
+//     ary = arySet;
+//     return ary;
+// }
+
 function pop(ary) {
-    aryNum = ary.length - 1
-    arySet = [];
-    for (let i = 0; i < aryNum; i++) {
-        arySet = [...arySet, ary[i]];
-        //console.log(arySet);
-    }
-    ary = arySet;
-    return ary;
+    ary.length -= 1
+    return ary
 }
 console.log(pop(ary1));
 console.log(ary1);
