@@ -6,7 +6,10 @@
   "author": "TANGEJ0411 <a123451121@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.7.0",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
     "prettier": "^2.8.1",
     "prettier-eslint": "^15.0.1"

@@ -1,5 +1,7 @@
 const axios = require('axios');
 const fs = require('node:fs/promises');
+const mysql2 = require('mySql2');
+const moment =require('moment');
 
 /* let readFilePromise = new Promise((resolve, reject) => {
     fs.readFile('stock.txt', 'utf-8', (err, data) => {
