@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const axios = require('axios');
 const fs = require('node:fs/promises');
 

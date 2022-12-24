@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const axios = require('axios');
 const fs = require('node:fs/promises');
-const moment =require('moment');
+const moment = require('moment');
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 
@@ -14,28 +16,24 @@ require('dotenv').config();
     });
   }); */
 
-
-	
 (async () => {
 	let connection;
 	try {
-		let data = await fs.readFile('stock.txt', { encoding: 'utf8' });
-		let stockNo = data;
-		let date = '20221111';
-		let crawler = await axios.get('http://54.71.133.152:3000/stocks', {
+		const data = await fs.readFile('stock.txt', { encoding: 'utf8' });
+		const stockNo = data;
+		const date = '20221111';
+		const crawler = await axios.get('http://54.71.133.152:3000/stocks', {
 			params: {
-				'stockNo': stockNo,
+				stockNo,
 				date,
 			},
 		});
 		console.log(crawler.data);
 	} catch (err) {
 		console.error(err);
-	}finally{
-		if(connection){
+	} finally {
+		if (connection) {
 			connection.end();
 		}
 	}
 })();
-
-

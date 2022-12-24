@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //1. 安裝 npm install
 //2. 引用 require
 //3. 讀官方文件 
